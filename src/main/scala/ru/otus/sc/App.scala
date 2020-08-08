@@ -33,23 +33,30 @@ trait App {
     * @return response with counter
     */
   def getRequestCount(request: CounterRequest): CounterResponse
+
+  /**
+  * Echo server - return the same message as the request
+  */
+  def echo(request: EchoRequest): EchoResponse
 }
 
 object App {
   private class AppImpl(greeting: GreetingService,
                         store: KeyValueService,
-                        counter: CounterService)
+                        counter: CounterService,
+                        echo: EchoService)
       extends App {
     def greet(request: GreetRequest): GreetResponse = greeting.handleRequest(request)
     def getPerson(request: KeyRequest): PersonResponse = store.handleRequest(request)
     def getRequestCount(request: CounterRequest): CounterResponse = counter.handleRequest(request)
+    def echo(request: EchoRequest): EchoResponse = echo.handleRequest(request)
   }
 
   def apply(): App = {
-    val greetingDao = new GreetingDaoImpl
-    val greetingService = new GreetingServiceImpl(greetingDao) with CounterAspect[GreetRequest, GreetResponse]
-    val store = new KeyValueServiceImpl(new PersonDaoStubImpl()) with CounterAspect[KeyRequest, PersonResponse]
+    val greetingService = new GreetingServiceImpl(new GreetingDaoImpl) with CounterAspect[GreetRequest, GreetResponse]
+    val store = new KeyValueServiceImpl(new PersonDaoStubImpl) with CounterAspect[KeyRequest, PersonResponse]
     val counter = new CounterServiceImpl with CounterAspect[CounterRequest, CounterResponse]
-    new AppImpl(greetingService, store, counter)
+    val echo = new EchoServiceImpl with CounterAspect[EchoRequest, EchoResponse]
+    new AppImpl(greetingService, store, counter, echo)
   }
 }
