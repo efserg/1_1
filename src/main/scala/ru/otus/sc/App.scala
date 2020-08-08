@@ -38,18 +38,22 @@ trait App {
   * Echo server - return the same message as the request
   */
   def echo(request: EchoRequest): EchoResponse
+
+  def lazyVal(request: LazyRequest): LazyResponse
 }
 
 object App {
   private class AppImpl(greeting: GreetingService,
                         store: KeyValueService,
                         counter: CounterService,
-                        echo: EchoService)
+                        echo: EchoService,
+                        lazyVal: LazyValService)
       extends App {
     def greet(request: GreetRequest): GreetResponse = greeting.handleRequest(request)
     def getPerson(request: KeyRequest): PersonResponse = store.handleRequest(request)
     def getRequestCount(request: CounterRequest): CounterResponse = counter.handleRequest(request)
     def echo(request: EchoRequest): EchoResponse = echo.handleRequest(request)
+    def lazyVal(request: LazyRequest): LazyResponse = lazyVal.handleRequest(request)
   }
 
   def apply(): App = {
@@ -57,6 +61,8 @@ object App {
     val store = new KeyValueServiceImpl(new PersonDaoStubImpl) with CounterAspect[KeyRequest, PersonResponse]
     val counter = new CounterServiceImpl with CounterAspect[CounterRequest, CounterResponse]
     val echo = new EchoServiceImpl with CounterAspect[EchoRequest, EchoResponse]
-    new AppImpl(greetingService, store, counter, echo)
+    val lazyService = new LazyValServiceImpl("LAZY VALUE") with CounterAspect[LazyRequest, LazyResponse]
+
+    new AppImpl(greetingService, store, counter, echo, lazyService)
   }
 }
