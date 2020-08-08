@@ -1,6 +1,6 @@
-package ru.otus.sc.greet.service.impl
-import ru.otus.sc.greet.model.{LazyRequest, LazyResponse}
-import ru.otus.sc.greet.service.LazyValService
+package ru.otus.sc.laziest.service
+
+import ru.otus.sc.model.{LazyRequest, LazyResponse}
 
 class LazyValServiceImpl(value: String) extends LazyValService {
   lazy val lazyValue: String = {

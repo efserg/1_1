@@ -1,4 +1,4 @@
-package ru.otus.sc.greet.dao.model
+package ru.otus.sc.model
 
 /**
   * Represent sex

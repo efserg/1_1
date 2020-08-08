@@ -1,5 +1,6 @@
-package ru.otus.sc.greet.dao
-import ru.otus.sc.greet.dao.model.Person
+package ru.otus.sc.keyvalue.dao
+
+import ru.otus.sc.model.Person
 
 /**
   * Trait for Person DAO

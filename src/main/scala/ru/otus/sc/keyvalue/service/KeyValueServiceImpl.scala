@@ -1,7 +1,7 @@
-package ru.otus.sc.greet.service.impl
-import ru.otus.sc.greet.dao.PersonDao
-import ru.otus.sc.greet.model.{KeyRequest, PersonResponse}
-import ru.otus.sc.greet.service.KeyValueService
+package ru.otus.sc.keyvalue.service
+
+import ru.otus.sc.keyvalue.dao.PersonDao
+import ru.otus.sc.model.{KeyRequest, PersonResponse}
 
 class KeyValueServiceImpl(dao: PersonDao) extends KeyValueService {
   override def handleRequest(request: KeyRequest): PersonResponse =

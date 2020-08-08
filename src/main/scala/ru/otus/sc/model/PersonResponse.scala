@@ -1,11 +1,10 @@
-package ru.otus.sc.greet.model
-import ru.otus.sc.greet.dao.model.{Person, Sex}
+package ru.otus.sc.model
 
 /**
   * Response for person in local store
   *
-  * @param person [[ru.otus.sc.greet.dao.model.Person Person]]'s representation
-  * @param message [[ru.otus.sc.greet.model.Message Message]] with response details
+  * @param person [[model.Person Person]]'s representation
+  * @param message [[Message Message]] with response details
   */
 case class PersonResponse(person: Person, message: Message)
 

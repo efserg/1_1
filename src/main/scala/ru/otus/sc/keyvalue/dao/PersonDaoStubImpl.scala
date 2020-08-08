@@ -1,6 +1,6 @@
-package ru.otus.sc.greet.dao.impl
-import ru.otus.sc.greet.dao.PersonDao
-import ru.otus.sc.greet.dao.model.{Person, Sex}
+package ru.otus.sc.keyvalue.dao
+
+import ru.otus.sc.model.{Person, Sex}
 
 class PersonDaoStubImpl extends PersonDao {
 

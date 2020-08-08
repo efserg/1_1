@@ -1,4 +1,4 @@
-package ru.otus.sc.greet.model
+package ru.otus.sc.model
 
 /**
   * Greeting request

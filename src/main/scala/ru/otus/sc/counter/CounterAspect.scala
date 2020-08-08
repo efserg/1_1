@@ -1,5 +1,8 @@
-package ru.otus.sc.greet.service
-import ru.otus.sc.greet.dao.CounterDao
+package ru.otus.sc.counter
+
+import ru.otus.sc.RequestHandler
+import ru.otus.sc.counter.dao.CounterDao
+
 
 /**
   * Requests counter aspect

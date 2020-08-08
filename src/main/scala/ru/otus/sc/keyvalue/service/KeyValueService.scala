@@ -1,5 +1,7 @@
-package ru.otus.sc.greet.service
-import ru.otus.sc.greet.model.{KeyRequest, PersonResponse}
+package ru.otus.sc.keyvalue.service
+
+import ru.otus.sc.RequestHandler
+import ru.otus.sc.model.{KeyRequest, PersonResponse}
 
 /**
   * Service for search the person in the key-value store

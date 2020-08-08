@@ -1,4 +1,4 @@
-package ru.otus.sc.greet.dao
+package ru.otus.sc.counter.dao
 
 object CounterDao {
   var counter = 0L

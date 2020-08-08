@@ -1,5 +1,6 @@
-package ru.otus.sc.greet.dao.model
-import ru.otus.sc.greet.dao.model.Sex.Sex
+package ru.otus.sc.model
+
+import ru.otus.sc.model.Sex.Sex
 
 /**
   * Person representation

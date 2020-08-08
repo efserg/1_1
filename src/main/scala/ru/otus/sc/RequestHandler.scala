@@ -1,4 +1,4 @@
-package ru.otus.sc.greet.service
+package ru.otus.sc
 
 trait RequestHandler[REQUEST, RESPONSE] {
   def handleRequest(request: REQUEST): RESPONSE

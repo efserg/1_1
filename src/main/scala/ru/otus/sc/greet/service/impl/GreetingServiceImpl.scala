@@ -1,8 +1,8 @@
 package ru.otus.sc.greet.service.impl
 
 import ru.otus.sc.greet.dao.GreetingDao
-import ru.otus.sc.greet.model.{GreetRequest, GreetResponse}
 import ru.otus.sc.greet.service.GreetingService
+import ru.otus.sc.model.{GreetRequest, GreetResponse}
 
 class GreetingServiceImpl(dao: GreetingDao) extends GreetingService {
   def handleRequest(request: GreetRequest): GreetResponse =

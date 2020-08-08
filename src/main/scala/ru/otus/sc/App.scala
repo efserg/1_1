@@ -1,9 +1,16 @@
 package ru.otus.sc
 
+import ru.otus.sc.counter.CounterAspect
+import ru.otus.sc.counter.service.CounterService
+import ru.otus.sc.counter.service.impl.CounterServiceImpl
+import ru.otus.sc.echo.service.{EchoService, EchoServiceImpl}
 import ru.otus.sc.greet.dao.impl._
-import ru.otus.sc.greet.model._
 import ru.otus.sc.greet.service._
 import ru.otus.sc.greet.service.impl._
+import ru.otus.sc.keyvalue.dao.PersonDaoStubImpl
+import ru.otus.sc.keyvalue.service.{KeyValueService, KeyValueServiceImpl}
+import ru.otus.sc.laziest.service.{LazyValService, LazyValServiceImpl}
+import ru.otus.sc.model._
 
 /**
   * The main application routers
