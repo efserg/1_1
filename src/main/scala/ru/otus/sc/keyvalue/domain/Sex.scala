@@ -1,4 +1,4 @@
-package ru.otus.sc.model
+package ru.otus.sc.keyvalue.domain
 
 /**
   * Represent sex
